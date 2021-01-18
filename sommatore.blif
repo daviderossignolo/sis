@@ -1,0 +1,15 @@
+.model sommatore1
+
+.inputs a0 b0 carryin
+.outputs out0 carryout
+.names a0 b0 r
+10 1
+01 1
+.names r carryin out0
+10 1
+01 1
+.names a0 b0 carryin carryout
+11- 1
+1-1 1
+-11 1
+.end

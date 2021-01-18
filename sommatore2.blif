@@ -1,0 +1,10 @@
+.model sommatore2
+
+.inputs a0 a1 b0 b1 carryin
+.outputs out0 out1 carryout
+
+.subckt sommatore1  a0=a0 b0=b0 carryin=carryin out0=out0 carryout=r0
+.subckt sommatore1  a0=a1 b0=b1 carryin=r0 out0=out1 carryout=carryout
+.search sommatore.blif
+
+.end

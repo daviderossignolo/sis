@@ -1,0 +1,13 @@
+.model mux01
+.inputs a1 a0 b1 b0 inc
+.outputs out1 out0
+
+.names inc a1 b1 out1
+01- 1
+1-1 1
+
+.names inc a0 b0 out0
+01- 1
+1-1 1
+
+.end

@@ -1,0 +1,33 @@
+.model contatore
+.inputs INC
+.outputs TENT
+
+#costante 0
+.names zero
+
+#costante 1
+.names uno 
+
+#multiplexer 
+.subckt mux2 inc=INC zero=a1 uno=a0 zero=b0 zero=b1 out0=omux0 out1=omux1
+
+#registro
+.subckt REGISTRO A0=somma0 A1=somma1 O0=oreg0 O1=oreg1
+
+#multiplexer2
+.subckt mux2 inc=TENT a1=oreg1 a0=oreg0 zero=b1 zero=b0 out0=o2mux0 out1=o2mux1
+
+#sommatore a 2 bit
+.subckt sommatore2 a1=omux1 a0=omux0 b1=o2mux1 b0=o2mux0 carryin=zero out1=somma1 out0=somma0 carryout=carryout
+
+#comparatore
+.subckt comparatore2 A0=somma0 A1=somma1 uno=B0 uno=B1 O=TENT
+
+.end
+
+.search multiplexer2.blif
+.search sommatore2.blif
+.search comparatore.blif
+.search registro.blif
+.search costante00.blif
+.search costante01.blif

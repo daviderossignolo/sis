@@ -1,0 +1,24 @@
+.model meldo
+.inputs INC
+.outputs O1 O0 TRASH
+
+#costante 0
+.subckt zero zero=c0
+
+#costante 1
+.subckt uno uno=p0
+
+#multiplexer 
+.subckt mux01 inc=INC a1=c0 a0=c0 b0=p0 b1=c0 out0=pippi out1=giangi
+
+#sommatore a 2 bit
+.subckt sommatore2 a1=giangi a0=pippi b1=c0 b0=c0 carryin=c0 out1=O1 out0=O0 carryout=TRASH
+
+.end
+.search multiplexer01.blif
+.search sommatore2.blif
+.search comparatore.blif
+.search registro.blif
+.search costante00.blif
+.search costante01.blif
+.search registro1.blif
