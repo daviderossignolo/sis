@@ -1,2 +1,2 @@
 # sis
-For the first assignment UNIVR
+Repository contenente tutti i file riguardanti il primo progetto del corso di Architettura Degli Elaboratori dell'università di Verona
